@@ -31,6 +31,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 				actions.getContacts();
 			},
+// pongo entre {} mi ususario pq tuve problemas, se me borra el usuario 
+
 
 			getContacts: async () => {
 				let actions = getActions();
