@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhoneAlt, faLocationDot, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 
-export const Contact = () => {
+
+export const ContactCard = () => {
 	const { store, actions } = useContext(Context);
 	const [id, setId] = useState("");
 
@@ -45,23 +44,23 @@ export const Contact = () => {
 								</div>
 								<div className="col text-secondary">
 									<div className="d-flex align-items-center">
-										<FontAwesomeIcon className="pe-2" icon={faLocationDot} /><p className="pt-3">{contact.address}</p>
+										<p className="pt-3">{contact.address}</p>
 									</div>
 									<div className="d-flex align-items-center">
-										<FontAwesomeIcon className="pe-2" icon={faPhoneAlt} /><p className="pt-3">{contact.phone}</p>
+										<p className="pt-3">{contact.phone}</p>
 									</div>
 									<div className="d-flex align-items-center">
-										<FontAwesomeIcon className="pe-2" icon={faEnvelope} /><p className="pt-3">{contact.email}</p>
+										<p className="pt-3">{contact.email}</p>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div className="col-2 p-2 ms-auto me-2 d-flex d-inline">
 							<div className="d-flex align-items-start mt-3">
-								<Link to="/updateContact"><button onClick={() => idUpdateContact(contact.id, contact.name, contact.address, contact.phone, contact.email)} className="btn"><FontAwesomeIcon className="px-2" icon={faPencil} /></button></Link>
+								<Link to="/updateContact"><button onClick={() => idUpdateContact(contact.id, contact.name, contact.address, contact.phone, contact.email)} className="btn"></button></Link>
 							</div>
 							<div className="d-flex align-items-start mt-3">
-								<button onClick={() => deleteOneContact(contact.id)} className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" ><FontAwesomeIcon className="px-2" icon={faTrash} /></button>
+								<button onClick={() => deleteOneContact(contact.id)} className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" ></button>
 							</div>
 						</div>
 					</div>

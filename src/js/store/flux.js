@@ -26,19 +26,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 			createContactList: async () => {
 				let actions = getActions();
 					const response = await fetch(
-						"https://playground.4geeks.com/contact/agendas/{annams02}",{ 
+						"https://playground.4geeks.com/contact/agendas/annams0212",{ 
 					method: "POST",
 				});
 				actions.getContacts();
 			},
-// pongo entre {} mi ususario pq tuve problemas, se me borra el usuario 
+
 
 
 			getContacts: async () => {
 				let actions = getActions();
 				try {
 					const response = await fetch(
-						"https://playground.4geeks.com/contact/agendas/{annams02}"
+						"https://playground.4geeks.com/contact/agendas/annams0212", {
+							method: "GET"
+						}
 					);
 					if (!response.ok) {
 				actions.createContactList();
@@ -54,7 +56,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			postContact: async (inputName, inputPhone, inputEmail, inputAddress) => {
 				let actions = getActions();
-				const response = await fetch("https://playground.4geeks.com/contact/agendas/{annams02}/contacts", {
+				const response = await fetch("https://playground.4geeks.com/contact/agendas/annams0212/contacts", {
 					method: "POST",
 					body: JSON.stringify({
 						name: inputName,
@@ -92,7 +94,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let actions = getActions();
 				let store = getStore();
 				
-				const response = await fetch('https://playground.4geeks.com/contact/agendas/{annams02}/contacts/' + `${store.contact2.id}`, {
+				const response = await fetch('https://playground.4geeks.com/contact/agendas/annams0212/contacts/' + `${store.contact2.id}`, {
 					method: "PUT",
 					body: JSON.stringify({
 						name: inputName,
@@ -114,7 +116,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			deleteContact: async (id) => {
 				let actions = getActions();
-				const response = await fetch('https://playground.4geeks.com/contact/agendas/{annams02}/contacts/' + `${id}`, {
+				const response = await fetch('https://playground.4geeks.com/contact/agendas/annams0212/contacts/' + `${id}`, {
 					method: "DELETE",
 				})
 				if (!response.ok) {

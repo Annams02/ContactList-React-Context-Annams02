@@ -13,7 +13,7 @@ export const ContactList = () => {
 				<button className="btn btn-success ms-auto m-3">Add new contact</button>
 			</Link>
 			<div className="container">
-				<Contact />
+				<ContactCard/>
 			</div>
         </div>
 	);
