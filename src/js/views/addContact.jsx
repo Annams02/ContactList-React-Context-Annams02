@@ -41,7 +41,7 @@ export const AddContact = () => {
 			<div className="mb-3">
 				<button className="btn btn-primary w-100" type="submit">Save</button>
 			</div>
-			<Link to="/">back to contact List</Link>
+			<Link to="/">Back to contact List</Link>
 		</form>
 	);
 };
